@@ -15,6 +15,6 @@ public class CommonTestController {
 
     @GetMapping("/hello")
     public String commonTest(){
-        return userMapper.selectByUUID().toString();
+        return userMapper.selectUserByUUID("123").toString();
     }
 }

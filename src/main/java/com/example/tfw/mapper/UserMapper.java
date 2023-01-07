@@ -9,9 +9,9 @@ import org.apache.ibatis.annotations.Select;
 public interface UserMapper extends BaseMapper<User> {
 
     @Select("select * from t_user")
-    User selectByUUID();
+    User selectUser();
 
-    @Select("select u.username from t_user u where u.uuid =:uuid")
-    String selectUserName(String uuid);
+    @Select("select u.* from t_user u where u.uuid = #{uuid}")
+    User selectUserByUUID(String uuid);
 
 }
